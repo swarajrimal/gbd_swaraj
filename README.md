@@ -65,4 +65,16 @@ The contents of JSON file is loaded as a dataframe in *df* variable. I then use 
 
 This code snippet produces visualizations based on the data. We first load the contents of the JSON file named **"ratnapark.json"** from the current working directory using Pandas, convert it to dataframe, and load into a variable named *df*. Next, we create a visualization for the relationship of *"value"* attribute with the *"particulate_matter"* column by creating a Boxplot using Seaborn tool.
 
+![alt_text](https://github.com/swarajrimal/gbd_swaraj/blob/main/images/boxplot.png "Boxplot")
 
+We can see from the Boxplot that the minimum, 1st quartile, and medain value of particulate matters for each category is similar. The 3rd quartile and the maximum values vary quite a bit for the categories. PM1 and PM2.5 have a lot of outliers suggesting their normal particulate matter value range is generally in the lower region as compared to that of PM10 and TSP. Overall, we do not find the distribution of the values of particulate matters differ to a great extent with each other.
+
+We then see the overall distribution of the values of particulate matter using a Histogram.
+![alt_text](https://github.com/swarajrimal/gbd_swaraj/blob/main/images/hostogram.png "Histogram")
+
+The histogram shows the distribution of the values to be very skewed to the right, meaning that majority of values fall towards the lower range. It follows that the general presence of particulate matter in the environment is low in any given time during the day. The increase in value maybe becuase of some related activities or emissions in the environment at certain intervals. 
+
+Lastly, we see the general trend of the values of particulate matter during the entire period of observation. We use *datetime* column as a series , split by the categories of *particulate_matter* to plot the *value* data to do this. 
+![alt_text](https://github.com/swarajrimal/gbd_swaraj/blob/main/images/timeseries.png "Time-Series")
+
+From the time-series graph above, it is very difficult to visualize a trend in the data, particularly because of the large volume of data. The trend for each particulate matter, however, can be visualized to be similar to each other. It means that when a value of one category of particulate matter increases during the day, value of other categories also follow. We should probably try to visualize the time-series data by lowering the range of our *datetime* for more clarity. This way, we identify the times during the day when the value of a particulate matter is high or low.
